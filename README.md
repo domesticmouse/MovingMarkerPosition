@@ -26,7 +26,7 @@ and add the resulting API key to the `AppDelegate.m` file:
 
 Open the project:
 
-    $ open DistortedGMSGroundOverlay.xcworkspace
+    $ open MovingMarkerPosition.xcworkspace
 
 Edit the resulting project in Xcode until you have the effect you are after,
 add the changes and issue a pull request:
