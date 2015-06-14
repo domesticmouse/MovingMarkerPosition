@@ -1,6 +1,6 @@
 #import "ViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
-#import <CoreLocation/CoreLocation.h>
+@import GoogleMaps;
+@import CoreLocation;
 
 @interface ViewController () <GMSIndoorDisplayDelegate, GMSMapViewDelegate>
 
