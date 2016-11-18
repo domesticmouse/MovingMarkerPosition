@@ -5,8 +5,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
-  // Please see https://developers.google.com/maps/documentation/ios/start#the_google_maps_api_key
-  [GMSServices provideAPIKey:@"Insert-Your-Api-Key-Here"];
+#error Please see https://developers.google.com/maps/documentation/ios/start#the_google_maps_api_key
+  [GMSServices provideAPIKey:@"Your API Key Here"];
   return YES;
 }
 

@@ -20,7 +20,15 @@
   CLLocationCoordinate2D location = CLLocationCoordinate2DMake(40.295210, -124.032841);
   GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:location zoom:10.5];
   [self.mapView animateToCameraPosition:camera];
-  [self.mapView setMapType:kGMSTypeHybrid];
+  
+  NSURL *styleUrl = [[NSBundle mainBundle] URLForResource:@"style" withExtension:@"json"];
+  NSError *error;
+  GMSMapStyle *style = [GMSMapStyle styleWithContentsOfFileURL:styleUrl error:&error];
+  if (!style) {
+    NSLog(@"The style definition could not be loaded: %@", error);
+  } else {
+    self.mapView.mapStyle = style;
+  }
   
   self.marker = [GMSMarker markerWithPosition:location];
   self.marker.map = self.mapView;
@@ -37,6 +45,11 @@
 }
 
 #pragma mark - ViewController class extension methods
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+  return UIStatusBarStyleLightContent;
+}
 
 -(void) updateMarkerDetails {
   
